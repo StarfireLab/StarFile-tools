@@ -210,8 +210,8 @@
 					<mainClass>com.xwintop.xJavaFxTool.Main</mainClass>
 					<vendor>xwintop</vendor>
 					<appName>StarFire-tools</appName>
-					<jfxMainAppJarName>xJavaFxTool-spring.jar</jfxMainAppJarName>
-<!--					<bundler>dmg</bundler>-->
+					<jfxMainAppJarName>StarFire-tools.jar</jfxMainAppJarName>
+					<bundler>dmg</bundler>
 				</configuration>
 			</plugin>
 		</plugins>
