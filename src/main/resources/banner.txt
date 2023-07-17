@@ -1,0 +1,2 @@
+﻿${AnsiColor.BRIGHT_BLUE}
+::: Project (version:${application.version}) :::  Spring-Boot ${spring-boot.version}
