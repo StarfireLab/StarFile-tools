@@ -1,5 +1,5 @@
 <p align="center">星火实验室GUI工具框架</p>
-项目来源于 https://gitee.com/xwintop/xJavaFxTool-spring，一个GUI框架，快速开发GUI程序
+项目来源于 [https://gitee.com/xwintop/xJavaFxTool-spring](https://gitee.com/xwintop/xJavaFxTool-spring) ，一个快速开发GUI程序的GUI框架
 
 # Licenses
 
