@@ -4,8 +4,14 @@
 
 借助这个GUI框架，可以快速开发GUI漏洞利用工具等，同时方便工具的集成。
 
-## Features
+# Features
 ![](static/ui.jpg)
+
+# 插件开发
+
+插件开发示例见开源项目 [xJavaFxTool-plugin](https://gitee.com/xwintop/xJavaFxTool-plugin)
+
+后续会逐步更新公开星火内部插件
 
 # Licenses
 
