@@ -51,9 +51,6 @@ public class XJavaFxSystemUtil {
             );
             if (jarFiles != null) {
                 for (File file : jarFiles) {
-//                    if (!PluginManageService.isPluginEnabled(file.getName())) {
-//                        continue;
-//                    }
                     addJarClass(file);
                 }
             }

@@ -1,10 +1,8 @@
 package com.xwintop.xJavaFxTool.controller;
 
-import com.xwintop.xJavaFxTool.common.logback.ConsoleLogAppender;
 import com.xwintop.xJavaFxTool.controller.index.PluginManageController;
 import com.xwintop.xJavaFxTool.model.ToolFxmlLoaderConfiguration;
 import com.xwintop.xJavaFxTool.services.IndexService;
-import com.xwintop.xJavaFxTool.services.index.PluginManageService;
 import com.xwintop.xJavaFxTool.services.index.SystemSettingService;
 import com.xwintop.xJavaFxTool.utils.Config;
 import com.xwintop.xJavaFxTool.utils.SpringUtil;
@@ -18,20 +16,17 @@ import com.xwintop.xcore.util.javafx.JavaFxViewUtil;
 import de.felixroske.jfxsupport.AbstractFxmlView;
 import de.felixroske.jfxsupport.FXMLController;
 import javafx.application.Platform;
-import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
 import javafx.event.Event;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
-import javafx.scene.control.*;
+import javafx.scene.control.ContextMenu;
+import javafx.scene.control.Menu;
+import javafx.scene.control.MenuItem;
+import javafx.scene.control.Tab;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.layout.BorderPane;
-import javafx.scene.web.WebEngine;
-import javafx.scene.web.WebView;
 import javafx.stage.Stage;
 import javafx.stage.WindowEvent;
 import lombok.Getter;
@@ -100,9 +95,6 @@ public class IndexController extends IndexView {
         File[] jarFiles = libPath.listFiles((dir, name) -> name.endsWith(".jar"));
         if (jarFiles != null) {
             for (File jarFile : jarFiles) {
-                if (!PluginManageService.isPluginEnabled(jarFile.getName())) {
-                    continue;
-                }
                 try {
                     this.addToolMenu(jarFile);
                 } catch (Exception e) {
@@ -134,6 +126,7 @@ public class IndexController extends IndexView {
             }
             InputStream input = jarFile.getInputStream(entry);
             SAXReader saxReader = new SAXReader();
+            saxReader.setFeature("http://apache.org/xml/features/disallow-doctype-decl", true);
             Document document = saxReader.read(input);
             Element root = document.getRootElement();
             List<Element> elements = root.elements("ToolFxmlLoaderConfiguration");
