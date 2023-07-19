@@ -3,6 +3,8 @@
 [xJavaFxTool-spring](https://gitee.com/xwintop/xJavaFxTool-spring) 
 ，一个快速开发GUI程序的GUI框架
 
+借助这个GUI框架，可以单独开发利用工具的插件，方便小工具的集成
+
 ## Features
 ![](static/ui.jpg)
 
