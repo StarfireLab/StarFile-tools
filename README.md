@@ -4,7 +4,7 @@
 ，一个快速开发GUI程序的GUI框架
 
 ## Features
-![](static/ui.png)
+![](static/ui.jpg)
 
 # Licenses
 
